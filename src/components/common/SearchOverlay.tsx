@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Search as SearchIcon, ArrowRight, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { getCategoryLabel } from '../../types/garden';
+import { getCategoryLabel, GARDEN_CATEGORIES } from '../../types/garden';
+import { CategoryIcon } from '../garden/CategoryIcon';
 
 interface SearchNode {
   id: string;
@@ -63,8 +64,6 @@ export const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
     );
   });
 
-  const categories = ['leituras', 'estudos', 'galeria', 'planos'] as const;
-
   return (
     <AnimatePresence>
       {isOpen && (
@@ -104,13 +103,14 @@ export const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
                 <p className="text-center italic text-olive/50 font-sans py-12">Carregando notas do ateliê...</p>
               ) : query.length > 0 ? (
                 <div className="grid md:grid-cols-2 gap-10">
-                  {categories.map((cat) => {
+                  {GARDEN_CATEGORIES.map((cat) => {
                     const catNodes = filteredNodes.filter((node) => node.category === cat);
                     if (catNodes.length === 0) return null;
 
                     return (
                       <div key={cat} className="space-y-4">
-                        <h3 className="text-xs font-bold uppercase tracking-widest text-olive/40 border-b border-olive/10 pb-2">
+                        <h3 className="text-xs font-bold uppercase tracking-widest text-olive/40 border-b border-olive/10 pb-2 flex items-center gap-1.5">
+                          <CategoryIcon category={cat} size={14} className="text-terracotta/70 shrink-0" />
                           {getCategoryLabel(cat)}
                         </h3>
                         <div className="space-y-3">

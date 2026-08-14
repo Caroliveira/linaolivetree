@@ -4,12 +4,13 @@ import React, { useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'motion/react';
-import { ArrowLeft, Calendar, Tag } from 'lucide-react';
+import { ArrowLeft, Calendar } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { preprocessMarkdown } from './markdown.utils';
 import { customComponents } from './MarkdownComponents';
 import { getCategoryLabel } from '../../types/garden';
+import { CategoryIcon } from './CategoryIcon';
 import type { GardenNode } from '../../types/garden';
 
 interface GardenDetailContentProps {
@@ -43,7 +44,7 @@ export const GardenDetailContent = ({ node }: GardenDetailContentProps) => {
               </span>
               <span className="w-1.5 h-1.5 bg-olive/20 rounded-full" />
               <span className="flex items-center gap-1.5 text-terracotta font-medium">
-                <Tag size={13} /> {getCategoryLabel(node.category)}
+                <CategoryIcon category={node.category} size={13} className="shrink-0" /> {getCategoryLabel(node.category)}
               </span>
             </div>
 

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Clipboard, Check, FileCode, Edit3, Bookmark, HelpCircle } from 'lucide-react';
+import { Clipboard, Check, FileCode, Edit3, Bookmark, HelpCircle, BookOpen, Ruler, Image as ImageIcon, ClipboardList } from 'lucide-react';
 
 export const DocsContent = () => {
   const [copied, setCopied] = useState(false);
@@ -75,10 +75,30 @@ Insira o corpo do seu texto aqui...
               O sistema distribui automaticamente suas notas de acordo com a variável <code className="bg-olive/5 px-1.5 py-0.5 rounded text-xs font-mono">category</code> inserida no topo:
             </p>
             <ul className="grid grid-cols-2 gap-3 text-xs">
-              <li className="p-2.5 bg-cream/40 border border-olive/10 font-mono"><strong className="text-olive">"planos"</strong> ➔ 📋 Planos</li>
-              <li className="p-2.5 bg-cream/40 border border-olive/10 font-mono"><strong className="text-olive">"leituras"</strong> ➔ 📚 Leituras</li>
-              <li className="p-2.5 bg-cream/40 border border-olive/10 font-mono"><strong className="text-olive">"estudos"</strong> ➔ 📐 Estudos</li>
-              <li className="p-2.5 bg-cream/40 border border-olive/10 font-mono"><strong className="text-olive">"galeria"</strong> ➔ 🖼️ Galeria</li>
+              <li className="p-2.5 bg-cream/40 border border-olive/10 font-mono flex items-center gap-1.5">
+                <strong className="text-olive">"planos"</strong> ➔ 
+                <span className="flex items-center gap-1 font-sans text-olive/80 font-medium">
+                  <ClipboardList size={13} className="text-terracotta shrink-0" /> Planos
+                </span>
+              </li>
+              <li className="p-2.5 bg-cream/40 border border-olive/10 font-mono flex items-center gap-1.5">
+                <strong className="text-olive">"leituras"</strong> ➔ 
+                <span className="flex items-center gap-1 font-sans text-olive/80 font-medium">
+                  <BookOpen size={13} className="text-terracotta shrink-0" /> Leituras
+                </span>
+              </li>
+              <li className="p-2.5 bg-cream/40 border border-olive/10 font-mono flex items-center gap-1.5">
+                <strong className="text-olive">"estudos"</strong> ➔ 
+                <span className="flex items-center gap-1 font-sans text-olive/80 font-medium">
+                  <Ruler size={13} className="text-terracotta shrink-0" /> Estudos
+                </span>
+              </li>
+              <li className="p-2.5 bg-cream/40 border border-olive/10 font-mono flex items-center gap-1.5">
+                <strong className="text-olive">"galeria"</strong> ➔ 
+                <span className="flex items-center gap-1 font-sans text-olive/80 font-medium">
+                  <ImageIcon size={13} className="text-terracotta shrink-0" /> Galeria
+                </span>
+              </li>
             </ul>
           </div>
         </section>

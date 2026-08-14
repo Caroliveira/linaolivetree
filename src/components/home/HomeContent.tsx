@@ -2,21 +2,16 @@
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import { ExternalLink, Calendar, Tag } from 'lucide-react';
+import { ExternalLink, Calendar, Tag, Sprout } from 'lucide-react';
+import { CATEGORY_LABELS, GARDEN_CATEGORIES } from '../../types/garden';
 import type { GardenNode } from '../../types/garden';
+import { CategoryIcon } from '../garden/CategoryIcon';
 
 interface HomeContentProps {
   initialNodes: GardenNode[];
 }
 
 export const HomeContent = ({ initialNodes }: HomeContentProps) => {
-  const categories = [
-    { id: 'leituras', title: '📚 Leituras & Anotações' },
-    { id: 'estudos', title: '📐 Estudos Práticos' },
-    { id: 'galeria', title: '🖼️ Galeria' },
-    { id: 'planos', title: '📋 Planos' },
-  ] as const;
-
   const getNodesByCategory = (catId: string) => {
     return initialNodes.filter((node) => node.category === catId);
   };
@@ -37,7 +32,7 @@ export const HomeContent = ({ initialNodes }: HomeContentProps) => {
   } as const;
 
   return (
-    <div className="relative min-h-screen bg-cream overflow-hidden pt-28 pb-24 px-6">
+    <div className="relative min-h-screen bg-cream overflow-hidden pt-22 md:pt-28 pb-24 px-6">
       <div className="absolute inset-0 grid-paper opacity-25 pointer-events-none" />
       <div className="absolute -right-32 top-10 h-72 w-72 rounded-full bg-olive/5 blur-3xl pointer-events-none" />
       <div className="absolute -left-32 bottom-10 h-72 w-72 rounded-full bg-terracotta/5 blur-3xl pointer-events-none" />
@@ -62,26 +57,30 @@ export const HomeContent = ({ initialNodes }: HomeContentProps) => {
           animate="show"
           className="grid md:grid-cols-2 gap-8"
         >
-          {categories
-            .filter((cat) => getNodesByCategory(cat.id).length > 0)
-            .map((cat, index) => {
-              const allCatNodes = getNodesByCategory(cat.id);
+          {GARDEN_CATEGORIES
+            .filter((catId) => getNodesByCategory(catId).length > 0)
+            .map((catId, index) => {
+              const allCatNodes = getNodesByCategory(catId);
               const topNodes = allCatNodes.slice(0, 2);
               const rotations = ['rotate-[-0.5deg]', 'rotate-[0.5deg]', 'rotate-[0.8deg]', 'rotate-[-0.8deg]'];
               const rotClass = rotations[index % rotations.length];
+              const title = CATEGORY_LABELS[catId] || catId;
 
               return (
                 <motion.div
-                  key={cat.id}
+                  key={catId}
                   variants={itemVariants}
-                  className={`washi-tape group ${rotClass} transition-transform duration-300 hover:rotate-0`}
+                  className={`washi-tape group ${rotClass} transition-transform duration-300 hover:rotate-0 mt-4`}
                 >
                   <div className="bg-white border border-olive/10 shadow-md p-6 md:p-8 min-h-[360px] flex flex-col justify-between relative overflow-hidden">
                     <div className="absolute inset-0 grid-paper opacity-[0.06] pointer-events-none" />
 
                     <div className="space-y-6 relative z-10">
                       <h2 className="text-xl md:text-2xl font-serif font-bold text-olive border-b border-olive/10 pb-3.5 flex items-center justify-between">
-                        <span>{cat.title}</span>
+                        <span className="flex items-center gap-2">
+                          <CategoryIcon category={catId} size={20} className="text-terracotta shrink-0" />
+                          {title}
+                        </span>
                         <span className="text-xs font-mono bg-olive/5 text-olive/60 px-2 py-0.5 rounded border border-olive/5">
                           {allCatNodes.length} {allCatNodes.length === 1 ? 'item' : 'itens'}
                         </span>
@@ -144,13 +143,14 @@ export const HomeContent = ({ initialNodes }: HomeContentProps) => {
 
                     <div className="pt-5 border-t border-olive/10 flex justify-between items-center mt-6 relative z-10">
                       <Link
-                        href={`/garden/categoria/${cat.id}`}
+                        href={`/garden/categoria/${catId}`}
                         className="text-[11px] font-mono uppercase tracking-[0.16em] text-terracotta hover:text-olive hover:underline transition-colors"
                       >
                         Histórico completo →
                       </Link>
-                      <span className="text-[9px] font-mono uppercase tracking-widest text-olive/25">
-                        🌿 {cat.id} plot
+                      <span className="text-[9px] font-mono uppercase tracking-widest text-olive/25 flex items-center gap-1">
+                        <Sprout size={11} className="text-olive/25 shrink-0" />
+                        {catId} plot
                       </span>
                     </div>
                   </div>

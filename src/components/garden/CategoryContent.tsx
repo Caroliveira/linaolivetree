@@ -3,9 +3,10 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { ArrowLeft, Search, Calendar, Tag, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Search, Calendar, ExternalLink } from 'lucide-react';
 import { getCategoryLabel } from '../../types/garden';
 import type { GardenNode } from '../../types/garden';
+import { CategoryIcon } from './CategoryIcon';
 
 interface CategoryContentProps {
   category: string;
@@ -61,7 +62,8 @@ export const CategoryContent = ({ category, initialNodes }: CategoryContentProps
         </div>
 
         <header className="space-y-3">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-olive italic">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-olive italic flex items-center gap-3.5">
+            <CategoryIcon category={category} size={36} className="text-terracotta shrink-0" />
             {getCategoryLabel(category)}
           </h1>
           <p className="text-sm font-mono text-olive/50 uppercase tracking-[0.18em]">
@@ -76,7 +78,7 @@ export const CategoryContent = ({ category, initialNodes }: CategoryContentProps
             </span>
             <input
               type="text"
-              placeholder={`Filtrar ${getCategoryLabel(category).split(' ').slice(1).join(' ')} por título ou tag...`}
+              placeholder={`Filtrar ${getCategoryLabel(category).toLowerCase()} por título ou tag...`}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2.5 bg-cream/35 border border-olive/10 focus:border-terracotta/40 focus:outline-none text-sm text-olive font-sans placeholder:text-olive/35 transition-colors"

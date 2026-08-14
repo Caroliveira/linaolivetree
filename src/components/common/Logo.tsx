@@ -6,7 +6,11 @@ import { motion } from 'motion/react';
 
 import { usePathname } from 'next/navigation';
 
-export const Logo = () => {
+interface LogoProps {
+  logoOnly?: boolean;
+}
+
+export const Logo = ({ logoOnly }: LogoProps) => {
   const pathname = usePathname();
 
   const handleClick = (e: React.MouseEvent) => {
@@ -17,8 +21,8 @@ export const Logo = () => {
   };
 
   return (
-    <Link 
-      href="/" 
+    <Link
+      href="/"
       onClick={handleClick}
       className="flex items-center gap-3 group cursor-pointer no-underline"
     >
@@ -36,7 +40,9 @@ export const Logo = () => {
           priority
         />
       </motion.div>
-      <span className="font-serif text-2xl font-bold tracking-tight text-olive">Lina Olivetree</span>
+      {!logoOnly && (
+        <span className="font-serif text-2xl font-bold tracking-tight text-olive">Lina Olivetree</span>
+      )}
     </Link>
   )
 };

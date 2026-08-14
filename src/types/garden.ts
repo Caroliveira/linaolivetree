@@ -1,8 +1,12 @@
+export const GARDEN_CATEGORIES: string[] = ['leituras', 'estudos', 'galeria', 'planos'] as const;
+
+export type GardenCategory = typeof GARDEN_CATEGORIES[number];
+
 export interface GardenNode {
   id: string;
   title: string;
   date: string;
-  category: 'leituras' | 'estudos' | 'galeria' | 'planos';
+  category: GardenCategory;
   excerpt: string;
   image?: string;
   content: string;
@@ -11,11 +15,11 @@ export interface GardenNode {
   externalUrl?: string;
 }
 
-export const CATEGORY_LABELS: Record<string, string> = {
-  leituras: '📚 Leituras & Anotações',
-  estudos: '📐 Estudos Práticos',
-  galeria: '🖼️ Galeria',
-  planos: '📋 Planos',
+export const CATEGORY_LABELS: Record<GardenCategory, string> = {
+  leituras: 'Leituras & Anotações',
+  estudos: 'Estudos Práticos',
+  galeria: 'Galeria',
+  planos: 'Planos',
 };
 
 export const getCategoryLabel = (category: string): string => {

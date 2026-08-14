@@ -2,12 +2,11 @@ import type { Metadata } from 'next';
 import { CategoryContent } from '../../../../components/garden/CategoryContent';
 import { getAllGardenNodes } from '../../../../lib/garden';
 import { notFound } from 'next/navigation';
-import { CATEGORY_LABELS } from '../../../../types/garden';
+import { CATEGORY_LABELS, GARDEN_CATEGORIES } from '../../../../types/garden';
 
-const validCategories = ['leituras', 'estudos', 'galeria', 'planos'];
 
 export function generateStaticParams() {
-  return validCategories.map((category) => ({
+  return GARDEN_CATEGORIES.map((category) => ({
     category,
   }));
 }
@@ -15,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
   const { category } = await params;
 
-  if (!validCategories.includes(category)) {
+  if (!GARDEN_CATEGORIES.includes(category)) {
     return { title: 'Categoria Não Encontrada' };
   }
 
@@ -27,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
 export default async function Page({ params }: { params: Promise<{ category: string }> }) {
   const { category } = await params;
 
-  if (!validCategories.includes(category)) {
+  if (!GARDEN_CATEGORIES.includes(category)) {
     notFound();
   }
 

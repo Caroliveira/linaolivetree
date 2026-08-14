@@ -7,9 +7,9 @@ export const Footer = () => {
   return (
     <footer className="bg-olive text-cream py-16 px-6 mt-auto">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        <div className="space-y-4 text-center md:text-left">
-          <Logo />
-          <p className="text-cream/60 max-w-sm text-sm">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
+          <Logo logoOnly />
+          <p className="text-cream/60 max-w-sm text-sm border-t md:border-t-0 md:border-l border-cream/10 pt-4 md:pt-0 md:pl-6 mt-1">
             Lina Olivetree é um diário de bordo digital de estudos, repertório e referências visuais de design e arquitetura.
           </p>
         </div>
