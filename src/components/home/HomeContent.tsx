@@ -67,7 +67,9 @@ export const HomeContent = ({ initialNodes }: HomeContentProps) => {
           animate="show"
           className="grid md:grid-cols-2 gap-8"
         >
-          {categories.map((cat, index) => {
+          {categories
+            .filter((cat) => getNodesByCategory(cat.id).length > 0)
+            .map((cat, index) => {
             const allCatNodes = getNodesByCategory(cat.id);
             const topNodes = allCatNodes.slice(0, 2); // Display only top 2 recent items
 
