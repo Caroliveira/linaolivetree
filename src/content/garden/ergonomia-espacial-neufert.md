@@ -2,38 +2,30 @@
 title: "Ergonomia Espacial: Ernst Neufert"
 date: "2026-08-14"
 category: "leituras"
-tags: ["Ergonomia", "Leituras", "Arquitetura"]
-excerpt: "Fichamento e anotações rápidas das dimensões mínimas, regras de circulação e fluxogramas da bíblia de arquitetura."
+tags: ["Ergonomia", "Leituras", "Arquitetura", "Estudos"]
+excerpt: "Sugestões de estudo sobre regras de circulação, dimensões mínimas e o livro clássico de referência."
 ---
 
-O livro *Arte de Projetar em Arquitetura* de Ernst Neufert é a referência mundial em ergonomia e padrões dimensionais de mobiliário e espaços habitáveis. O estudo dessas dimensões garante a funcionalidade dos ambientes e a circulação confortável no dia a dia.
-
----
-
-## 📏 Medidas Mínimas Fundamentais
-
-Aqui estão as regras básicas coletadas para guiar o layout da futura residência:
-
-### 1. Circulações Gerais
-- Corredores residenciais devem ter largura mínima de **90 cm** a **1 m** para a passagem confortável de uma pessoa e circulação fluida.
-- Vãos livres de portas principais devem ter largura de **80 cm** a **90 cm** (quartos/entradas) e mínimo de **70 cm** (banheiros).
-
-### 2. O Triângulo de Trabalho na Cozinha
-A disposição funcional de uma cozinha depende do posicionamento correto de três áreas essenciais:
-- **Pia** (Preparação/Limpeza)
-- **Fogão** (Cocção)
-- **Geladeira** (Armazenamento)
-A soma das distâncias imaginárias entre esses três pontos não deve ultrapassar **6 metros** para otimizar os movimentos de preparo das refeições.
+Para desenvolver uma sensibilidade espacial correta e conseguir desenhar plantas com dimensões funcionais e realistas, é sugerido o estudo focado de **Ergonomia Espacial e Circulação**.
 
 ---
 
-## 📐 Alturas de Mobiliário Sob Medida
+## 📐 Tópicos de Estudo Recomendados
 
-| Mobiliário / Bancada | Altura Recomendada | Observação |
-| :--- | :--- | :--- |
-| **Mesa de Refeição** | 72 cm a 75 cm | Altura média padrão. |
-| **Bancada de Cozinha** | 88 cm a 92 cm | Adaptável à altura do usuário principal. |
-| **Bancada de Trabalho (Sentado)** | 73 cm a 76 cm | Ideal para postura de desenho e estudo. |
+1. **Circulações e Portas**:
+   - Estudar as distâncias mínimas recomendadas para corredores (entre 90 cm e 1 m).
+   - Vãos de passagem confortáveis para portas principais (80 cm a 90 cm) e banheiros (mínimo de 70 cm).
+2. **Triângulo de Trabalho na Cozinha**:
+   - Entender a relação de fluxo entre a Pia (preparo), Fogão (cocção) e Geladeira (armazenamento), garantindo que a soma das distâncias não exceda 6 metros.
+3. **Alturas Padrão**:
+   - Memorizar ou documentar alturas funcionais para bancadas de cozinha (88 cm a 92 cm), mesas (72 cm a 75 cm) e tampos de estudo.
 
-| "A ergonomia residencial protege a saúde e o fluxo físico dos moradores. O espaço deve se adaptar ao corpo, e não o oposto."
-— Ernst Neufert
+---
+
+## 📚 Fontes e Cursos Indicados
+
+- **[Neufert - Arte de Projetar em Arquitetura (Livro)](https://www.amazon.com.br/Arte-Projetar-em-Arquitetura-Neufert/dp/8582600984)**: A referência padrão global para proporções, dimensionamento residencial e ergonomia geral de mobiliários.
+- **[ArqExpress - Renata Pocztaruk (YouTube)](https://www.youtube.com/@arqexpress)**: Canal dinâmico com dicas muito práticas de layout, paginação, iluminação residencial e ergonomia rápida.
+- **[Cursos de Design de Interiores na Domestika](https://www.domestika.org/)**: Pesquisar por cursos básicos de *Desenho de Plantas Baixas* ou *Design de Interiores* para guiar a visualização de espaços.
+
+> A ergonomia serve para garantir que as pessoas se movam livremente e com segurança pelos cômodos. É o primeiro passo para sair das simulações conceituais de jogos e ir para a escala real.

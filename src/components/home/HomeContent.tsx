@@ -37,7 +37,7 @@ export const HomeContent = ({ initialNodes }: HomeContentProps) => {
       <div className="absolute -right-32 top-10 h-72 w-72 rounded-full bg-olive/5 blur-3xl pointer-events-none" />
       <div className="absolute -left-32 bottom-10 h-72 w-72 rounded-full bg-terracotta/5 blur-3xl pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto space-y-12 relative z-10">
+      <div className="max-w-6xl mx-auto space-y-12 relative z-10">
         <header className="text-center space-y-6 max-w-3xl mx-auto pt-8">
           <div className="flex items-center justify-center gap-3">
             <span className="w-8 h-[1px] bg-olive/20" />
@@ -142,15 +142,19 @@ export const HomeContent = ({ initialNodes }: HomeContentProps) => {
                     </div>
 
                     <div className="pt-5 border-t border-olive/10 flex justify-between items-center mt-6 relative z-10">
-                      <Link
-                        href={`/garden/categoria/${catId}`}
-                        className="text-[11px] font-mono uppercase tracking-[0.16em] text-terracotta hover:text-olive hover:underline transition-colors"
-                      >
-                        Histórico completo →
-                      </Link>
+                      {allCatNodes.length > 2 ? (
+                        <Link
+                          href={`/garden/categoria/${catId}`}
+                          className="text-[11px] font-mono uppercase tracking-[0.16em] text-terracotta hover:text-olive hover:underline transition-colors"
+                        >
+                          Histórico completo →
+                        </Link>
+                      ) : (
+                        <div />
+                      )}
                       <span className="text-[9px] font-mono uppercase tracking-widest text-olive/25 flex items-center gap-1">
                         <Sprout size={11} className="text-olive/25 shrink-0" />
-                        {catId} plot
+                        Canteiro de {catId}
                       </span>
                     </div>
                   </div>

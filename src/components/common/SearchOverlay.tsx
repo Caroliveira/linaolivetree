@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Search as SearchIcon, ArrowRight, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
@@ -27,6 +27,28 @@ export const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
   const [nodes, setNodes] = useState<SearchNode[]>([]);
   const [loading, setLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const usedTags = useMemo(() => {
+    const counts = new Map<string, number>();
+    const casing = new Map<string, string>();
+
+    for (const tag of nodes.flatMap((n) => n.tags || [])) {
+      const trimmed = tag.trim();
+      if (!trimmed) continue;
+
+      const normalized = trimmed.toLowerCase();
+      counts.set(normalized, (counts.get(normalized) || 0) + 1);
+
+      if (!casing.has(normalized) || (trimmed[0] === trimmed[0].toUpperCase() && casing.get(normalized)![0] !== trimmed[0])) {
+        casing.set(normalized, trimmed);
+      }
+    }
+
+    return Array.from(counts.keys())
+      .sort((a, b) => counts.get(b)! - counts.get(a)! || a.localeCompare(b))
+      .map((normalized) => casing.get(normalized)!)
+      .slice(0, 10);
+  }, [nodes]);
 
   useEffect(() => {
     if (isOpen) {
@@ -75,7 +97,7 @@ export const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
         >
           <div className="max-w-4xl mx-auto w-full px-6 pt-24">
             <div className="flex justify-between items-center mb-10">
-              <h2 className="text-3xl font-serif italic text-olive font-bold">Buscar no Jardim Digital</h2>
+              <h2 className="text-3xl font-serif italic text-olive font-bold">Buscar</h2>
               <button
                 onClick={onClose}
                 className="p-2 hover:bg-olive/10 rounded-full transition-colors text-olive cursor-pointer"
@@ -92,7 +114,7 @@ export const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Digite para buscar notas, croquis, fichamentos ou tags..."
+                placeholder="Explorar o jardim..."
                 aria-label="Buscar conteúdo"
                 className="w-full bg-white px-16 py-5 text-xl font-sans focus:outline-none focus:border-terracotta/40 transition-colors shadow-md border border-olive/10"
               />
@@ -100,7 +122,17 @@ export const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
 
             <div className="overflow-y-auto max-h-[60vh] pb-12 pr-4 custom-scrollbar space-y-10">
               {loading ? (
-                <p className="text-center italic text-olive/50 font-sans py-12">Carregando notas do ateliê...</p>
+                <div className="text-center py-12 space-y-4">
+                  <p className="text-olive/40 italic font-sans animate-pulse">Carregando notas do ateliê...</p>
+                  <div className="flex flex-wrap justify-center gap-2 max-w-lg mx-auto">
+                    {['w-20', 'w-24', 'w-16', 'w-28', 'w-20', 'w-24'].map((widthClass, i) => (
+                      <div
+                        key={i}
+                        className={`h-7 ${widthClass} bg-olive/10 animate-pulse border border-olive/5`}
+                      />
+                    ))}
+                  </div>
+                </div>
               ) : query.length > 0 ? (
                 <div className="grid md:grid-cols-2 gap-10">
                   {GARDEN_CATEGORIES.map((cat) => {
@@ -166,17 +198,19 @@ export const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
               ) : (
                 <div className="text-center py-12 space-y-4">
                   <p className="text-olive/40 italic font-sans">Comece a digitar para ver os resultados...</p>
-                  <div className="flex flex-wrap justify-center gap-2 max-w-lg mx-auto">
-                    {['Resumo', 'Planta', '3D', 'Croquis', 'Aquarela', 'Modulor'].map((tag) => (
-                      <button
-                        key={tag}
-                        onClick={() => setQuery(tag)}
-                        className="px-3 py-1.5 bg-white border border-olive/10 hover:border-olive/20 text-xs text-olive transition-colors cursor-pointer"
-                      >
-                        {tag}
-                      </button>
-                    ))}
-                  </div>
+                  {usedTags.length > 0 && (
+                    <div className="flex flex-wrap justify-center gap-2 max-w-lg mx-auto">
+                      {usedTags.map((tag) => (
+                        <button
+                          key={tag}
+                          onClick={() => setQuery(tag)}
+                          className="px-3 py-1.5 bg-white border border-olive/10 hover:border-olive/20 text-xs text-olive transition-colors cursor-pointer hover:bg-cream/40"
+                        >
+                          {tag}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
             </div>

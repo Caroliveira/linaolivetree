@@ -6,13 +6,13 @@ tags: ["Carreira", "Planejamento"]
 excerpt: "Diretrizes estratégicas para transição gradual da programação para arquitetura, usando a tecnologia como investidora anjo."
 ---
 
-Deixar uma carreira consolidada e estável em desenvolvimento de software para ingressar na arquitetura gera receios válidos. A arquitetura tradicional possui um tempo de maturação (*ramp up*) longo, especialmente para quem não possui familiares na área. 
+Deixar uma carreira consolidada e estável em desenvolvimento de software para ingressar na arquitetura gera receios válidos. A arquitetura tradicional possui um tempo de maturação (*ramp up*) longo, especialmente para quem não possui familiares ou amigos na área. 
 
-A chave para uma transição sustentável é utilizar a remuneração atual como alavanca e enxergar a programação como um superpoder de diferenciação.
+A chave para uma transição sustentável é utilizar a remuneração atual como alavanca e enxergar a programação como um superpoder de diferenciação. Ao menos é o que tentarei fazer...
 
 ---
 
-## 💡 O Conceito de iFood como "Investidor Anjo"
+## 💡 Emprego atual como "Investidor Anjo"
 
 Em vez de ver o emprego atual em tecnologia como uma barreira, ele deve ser tratado como o principal patrocinador da nova fase:
 - **Financeiro**: Custeio de bons computadores para renderização, materiais artísticos, cursos paralelos e a própria graduação.

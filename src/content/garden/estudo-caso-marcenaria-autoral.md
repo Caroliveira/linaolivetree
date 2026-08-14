@@ -2,35 +2,27 @@
 title: "Estudo de Caso: Marcenaria Autoral"
 date: "2026-08-14"
 category: "galeria"
-tags: ["Marcenaria", "Design", "Móveis", "Cases"]
-excerpt: "Como rascunhos conceituais feitos em simuladores se tornaram móveis reais construídos por marceneiros independentes."
+tags: ["Marcenaria", "Design", "Móveis", "Cases", "Estudos"]
+excerpt: "Sugestões de estudo sobre detalhamento técnico de móveis e estruturação de portfólio baseado em execuções reais."
 ---
 
-O desenvolvimento de layout e marcenaria para a reforma da residência atual começou a partir de estudos tridimensionais informais feitos dentro de plataformas de simulação (como *The Sims* e *Paralives*). Testar volumetrias e disposições de móveis ajudou a visualizar os fluxos antes da contratação física.
-
----
-
-## 🎨 O Processo de Produção
-
-A criação dos móveis autorais seguiu três etapas estruturadas:
-
-```
-Rascunho de Fluxo no Jogo 
-  ➔ Desenho Técnico de Medidas 
-    ➔ Produção por Marceneiro Independente ➔ Móvel Real Executado
-```
-
-### Detalhamento dos Móveis Construídos:
-1. **Bancada de Desenho**: Mesa sob medida com cavaletes inclináveis e gaveteiro horizontal embutido para papel de aquarela de grande formato.
-2. **Estante de Livros**: Estrutura modular em madeira maciça com nichos dedicados a livros de arquitetura, história da arte e repertórios visuais.
-3. **Mesa Lateral de Estúdio**: Carrinho utilitário móvel com rodízios para armazenamento de tintas, pincéis, réguas e ferramentas de desenho.
+Um dos caminhos mais viáveis para obter renda como freelancer (mesmo sem diploma formal) é o suporte a arquitetos e marcenarias no **detalhamento técnico de móveis planejados e marcenaria sob medida**. 
 
 ---
 
-## 📸 Validação Física no Portfólio
+## 🎨 Tópicos de Estudo Recomendados
 
-| "A capacidade de provar que os móveis que você projeta e rascunha podem ser construídos e funcionar perfeitamente na vida real é o seu maior diferencial de portfólio."
-— Lina Olivetree
+1. **Detalhamento Técnico**:
+   - Como desenhar vistas ortográficas, cortes e perspectivas explodidas de móveis de forma que um marceneiro consiga executar sem dúvidas.
+2. **Transformação de Casos Reais em Portfólio**:
+   - Organizar a experiência prática anterior (como os 3 móveis reais já projetados e fabricados para a residência atual) em pranchas conceituais com fotos do resultado físico entregue.
 
-> **Bastidores de Projeto:**
-> A marcenaria sob medida e o detalhamento técnico de móveis são ótimos serviços para prestar como freelancer para designers de interiores que precisam de apoio na etapa executiva de detalhamento.
+---
+
+## 📚 Fontes e Cursos Indicados
+
+- **[Behance](https://www.behance.net/)**: Plataforma excelente para pesquisar portfólios profissionais focados em *detalhamento de marcenaria* ou *BIM/SketchUp drawings* e entender o padrão de entrega visual de mercado.
+- **[Cursos de SketchUp na Udemy](https://www.udemy.com/)**: Buscar por treinamentos de *SketchUp para Marcenaria e Interiores*, que ensinam a modelar móveis peça por peça com precisão milimétrica.
+- **[Cursos de Design de Mobiliário na Domestika](https://www.domestika.org/)**: Cursos curtos voltados a designers independentes sobre técnicas de fabricação, encaixes e escolha de painéis (MDF, Compensados, Madeiras maciças).
+
+> Mostrar fotos de peças físicas reais que você desenhou e foram executadas com sucesso por marceneiros independentes tem mais valor em um portfólio técnico do que dezenas de renders conceituais e hipotéticos.

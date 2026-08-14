@@ -24,7 +24,7 @@ export const GardenDetailContent = ({ node }: GardenDetailContentProps) => {
 
   return (
     <div className="pt-32 pb-24 px-6 overflow-hidden min-h-screen bg-cream">
-      <article className="max-w-3xl mx-auto">
+      <article className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}

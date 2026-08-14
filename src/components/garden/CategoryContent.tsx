@@ -51,7 +51,7 @@ export const CategoryContent = ({ category, initialNodes }: CategoryContentProps
     <div className="min-h-screen bg-cream pt-32 pb-24 px-6 relative">
       <div className="absolute inset-0 grid-paper opacity-20 pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto space-y-10 relative z-10">
+      <div className="max-w-5xl mx-auto space-y-10 relative z-10">
         <div>
           <Link
             href="/"
