@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { ArrowLeft, Search, Calendar, Tag, ExternalLink } from 'lucide-react';
+import { getCategoryLabel } from '../../types/garden';
 import type { GardenNode } from '../../types/garden';
 
 interface CategoryContentProps {
@@ -15,27 +16,10 @@ export const CategoryContent = ({ category, initialNodes }: CategoryContentProps
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
-  const getCategoryTitle = (cat: string) => {
-    switch (cat) {
-      case 'leituras':
-        return '📚 Leituras & Anotações';
-      case 'estudos':
-        return '📐 Estudos Práticos';
-      case 'galeria':
-        return '🖼️ Galeria / Croquis';
-      case 'planos':
-        return '📋 Planos';
-      default:
-        return cat;
-    }
-  };
-
-  // Extract all unique tags in this category
   const allTags = Array.from(
     new Set(initialNodes.flatMap((node) => node.tags || []))
   );
 
-  // Filter nodes based on search query and tag selection
   const filteredNodes = initialNodes.filter((node) => {
     const matchesSearch =
       node.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -67,7 +51,6 @@ export const CategoryContent = ({ category, initialNodes }: CategoryContentProps
       <div className="absolute inset-0 grid-paper opacity-20 pointer-events-none" />
 
       <div className="max-w-4xl mx-auto space-y-10 relative z-10">
-        {/* Navigation Breadcrumb */}
         <div>
           <Link
             href="/"
@@ -77,17 +60,15 @@ export const CategoryContent = ({ category, initialNodes }: CategoryContentProps
           </Link>
         </div>
 
-        {/* Title Header */}
         <header className="space-y-3">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-olive italic">
-            {getCategoryTitle(category)}
+            {getCategoryLabel(category)}
           </h1>
           <p className="text-sm font-mono text-olive/50 uppercase tracking-[0.18em]">
             Histórico completo • {initialNodes.length} {initialNodes.length === 1 ? 'item' : 'itens'}
           </p>
         </header>
 
-        {/* Search & Tags inside this category */}
         <section className="bg-white border border-olive/10 p-6 shadow-sm space-y-4">
           <div className="relative">
             <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-olive/40">
@@ -95,7 +76,7 @@ export const CategoryContent = ({ category, initialNodes }: CategoryContentProps
             </span>
             <input
               type="text"
-              placeholder={`Filtrar ${getCategoryTitle(category).split(' ').slice(1).join(' ')} por título ou tag...`}
+              placeholder={`Filtrar ${getCategoryLabel(category).split(' ').slice(1).join(' ')} por título ou tag...`}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2.5 bg-cream/35 border border-olive/10 focus:border-terracotta/40 focus:outline-none text-sm text-olive font-sans placeholder:text-olive/35 transition-colors"
@@ -107,11 +88,10 @@ export const CategoryContent = ({ category, initialNodes }: CategoryContentProps
               <span className="text-[10px] font-mono uppercase tracking-wider text-olive/40 mr-2">Tags:</span>
               <button
                 onClick={() => setSelectedTag(null)}
-                className={`text-[11px] px-2.5 py-1 border transition-all ${
-                  !selectedTag
+                className={`text-[11px] px-2.5 py-1 border transition-all ${!selectedTag
                     ? 'bg-olive border-olive text-cream font-medium'
                     : 'bg-transparent border-olive/10 text-olive/70 hover:border-olive/20'
-                }`}
+                  }`}
               >
                 Tudo
               </button>
@@ -119,11 +99,10 @@ export const CategoryContent = ({ category, initialNodes }: CategoryContentProps
                 <button
                   key={tag}
                   onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
-                  className={`text-[11px] px-2.5 py-1 border transition-all ${
-                    tag === selectedTag
+                  className={`text-[11px] px-2.5 py-1 border transition-all ${tag === selectedTag
                       ? 'bg-terracotta border-terracotta text-cream font-medium'
                       : 'bg-transparent border-olive/10 text-olive/70 hover:border-olive/20'
-                  }`}
+                    }`}
                 >
                   #{tag}
                 </button>
@@ -132,7 +111,6 @@ export const CategoryContent = ({ category, initialNodes }: CategoryContentProps
           )}
         </section>
 
-        {/* Results List */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -152,8 +130,8 @@ export const CategoryContent = ({ category, initialNodes }: CategoryContentProps
                   variants={itemVariants}
                   className="bg-white border border-olive/10 p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow relative"
                 >
-                  <div className="absolute top-0 left-0 bottom-0 w-[2px] bg-terracotta/40" /> {/* Caderno edge tab */}
-                  
+                  <div className="absolute top-0 left-0 bottom-0 w-[2px] bg-terracotta/40" />
+
                   <div className="space-y-3 pl-2">
                     <div className="flex items-center gap-3 text-xs font-mono text-olive/40 uppercase tracking-widest">
                       <span className="flex items-center gap-1">

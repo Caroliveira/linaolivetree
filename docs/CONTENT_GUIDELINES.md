@@ -31,7 +31,7 @@ externalUrl: "https://instagram.com/..." # opcional (leva o usuário direto ao l
 - `planos` ➔ 📋 Planos (metas, reformas, cronogramas)
 - `leituras` ➔ 📚 Leituras & Anotações (resumos, citações de livros)
 - `estudos` ➔ 📐 Estudos Práticos (desenhos técnicos, exercícios de luz/render)
-- `galeria` ➔ 🖼️ Galeria / Croquis (fotos de cadernos de traços, desenhos botânicos)
+- `galeria` ➔ 🖼️ Galeria (fotos de cadernos de traços, desenhos botânicos)
 
 ---
 

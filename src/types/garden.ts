@@ -10,3 +10,14 @@ export interface GardenNode {
   tags?: string[];
   externalUrl?: string;
 }
+
+export const CATEGORY_LABELS: Record<string, string> = {
+  leituras: '📚 Leituras & Anotações',
+  estudos: '📐 Estudos Práticos',
+  galeria: '🖼️ Galeria',
+  planos: '📋 Planos',
+};
+
+export const getCategoryLabel = (category: string): string => {
+  return CATEGORY_LABELS[category] || category;
+};

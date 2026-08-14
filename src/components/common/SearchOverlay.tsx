@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Search as SearchIcon, ArrowRight, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
+import { getCategoryLabel } from '../../types/garden';
 
 interface SearchNode {
   id: string;
@@ -30,8 +31,7 @@ export const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
     if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 100);
       document.body.style.overflow = 'hidden';
-      
-      // Fetch search data from API
+
       setLoading(true);
       fetch('/api/garden')
         .then((res) => res.json())
@@ -63,22 +63,6 @@ export const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
     );
   });
 
-  const getCategoryTitle = (cat: string) => {
-    switch (cat) {
-      case 'leituras':
-        return '📚 Leituras & Anotações';
-      case 'estudos':
-        return '📐 Estudos Práticos';
-      case 'galeria':
-        return '🖼️ Galeria / Croquis';
-      case 'planos':
-        return '📋 Planos';
-      default:
-        return cat;
-    }
-  };
-
-  // Group nodes by category for display
   const categories = ['leituras', 'estudos', 'galeria', 'planos'] as const;
 
   return (
@@ -127,7 +111,7 @@ export const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
                     return (
                       <div key={cat} className="space-y-4">
                         <h3 className="text-xs font-bold uppercase tracking-widest text-olive/40 border-b border-olive/10 pb-2">
-                          {getCategoryTitle(cat)}
+                          {getCategoryLabel(cat)}
                         </h3>
                         <div className="space-y-3">
                           {catNodes.map((node) => {
@@ -148,7 +132,7 @@ export const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
                                   >
                                     <span className="flex items-center gap-1">
                                       {node.title}
-                                      <ExternalLink size={12} className="opacity-60" />
+                                      <ExternalLink size={12} className="opacity-65" />
                                     </span>
                                     <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
                                   </a>
