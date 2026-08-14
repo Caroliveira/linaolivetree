@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="x-apple-disable-message-reformatting" />
+  <title>Welcome to Lina Olivetree</title>
+  <style>
+    body,
+    table,
+    td,
+    p,
+    a {
+      margin: 0;
+      padding: 0;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    img {
+      border: 0;
+      display: block;
+      line-height: 100%;
+      max-width: 100%;
+      outline: none;
+      text-decoration: none;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    body {
+      width: 100% !important;
+      height: 100% !important;
+      background-color: #f5f2ed;
+      color: #3f3a2f;
+    }
+
+    .email-shell {
+      width: 100%;
+      background: radial-gradient(circle at top left, rgba(217, 139, 114, 0.18), transparent 34%), radial-gradient(circle at bottom right, rgba(139, 139, 107, 0.18), transparent 28%), #f5f2ed;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border: 1px solid #e6e0d8;
+      border-radius: 28px;
+    }
+
+    .eyebrow {
+      color: #c05c3c;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+    }
+
+    .serif {
+      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    }
+
+    .body-copy {
+      color: #5f5a4c;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 28px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-decoration: none;
+    }
+
+    .button-primary {
+      background-color: #5a5a40;
+      color: #f5f2ed;
+    }
+
+    .button-secondary {
+      background-color: #f7eee9;
+      color: #c05c3c;
+    }
+
+    .note {
+      background-color: #f5f2ed;
+      border: 1px solid #e6e0d8;
+      border-radius: 20px;
+    }
+
+    .divider {
+      border-top: 1px solid #e8e2da;
+    }
+
+    .footer-link {
+      color: #5a5a40;
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 640px) {
+      .wrapper {
+        width: 100% !important;
+      }
+
+      .stack,
+      .stack td {
+        display: block !important;
+        width: 100% !important;
+      }
+
+      .mobile-pad {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+      }
+
+      .hero-title {
+        font-size: 42px !important;
+        line-height: 0.95 !important;
+      }
+
+      .section-title {
+        font-size: 30px !important;
+      }
+
+      .button {
+        display: block !important;
+        text-align: center !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div style="display: none; max-height: 0; overflow: hidden; opacity: 0;"> A quiet welcome from Lina Olivetree, with
+    stories, paper, and planted futures. </div>
+  <table role="presentation" width="100%" class="email-shell">
+    <tr>
+      <td align="center" style="padding: 32px 16px;">
+        <table role="presentation" width="620" class="wrapper">
+          <tr>
+            <td class="mobile-pad" style="padding: 12px 0 20px; text-align: center;">
+              <p style="color: #8b8b6b; font-size: 12px; letter-spacing: 1.8px; text-transform: uppercase;"> Lina
+                Olivetree </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="card mobile-pad" style="padding: 44px 40px 36px;">
+              <table role="presentation" width="100%">
+                <tr>
+                  <td>
+                    <p class="eyebrow" style="margin-bottom: 18px;">Welcome</p>
+                    <h1 class="serif hero-title"
+                      style="color: #5a5a40; font-size: 58px; font-weight: 600; line-height: 0.9; margin: 0 0 18px;">
+                      Stories, paper, and <span style="color: #c05c3c; font-style: italic;"> planted </span>futures.
+                    </h1>
+                    <p
+                      style="color: #5a5a40; font-size: 19px; line-height: 1.6; max-width: 500px; margin-bottom: 28px;">
+                      I&apos;m so glad you&apos;re here, {{ first_name | default: "friend" }}. </p>
+                    <p class="body-copy" style="margin-bottom: 18px;"> Lina Olivetree is a small brand built around
+                      illustrated products, thoughtful making, and a promise to keep beauty connected to something
+                      living. </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-bottom: 12px;">
+                    <table role="presentation" class="stack">
+                      <tr>
+                        <td style="padding: 0 12px 12px 0;"> <a href="https://linaolivetree.com/library"
+                            class="button button-primary">Browse the collection</a> </td>
+                        <td style="padding: 0 0 12px;"> <a href="https://linaolivetree.com/roots"
+                            class="button button-secondary">Read our roots</a> </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 12px;">
+                    <table role="presentation" width="100%" class="note">
+                      <tr>
+                        <td style="padding: 22px 24px;">
+                          <p
+                            style="color: #8b8b6b; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">
+                            A Small Promise </p>
+                          <p class="serif" style="color: #5a5a40; font-size: 30px; line-height: 1.15;"> Every 5 items
+                            sold helps fund the planting of 1 tree in Brazil. </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="height: 18px;"></td>
+          </tr>
+          <tr>
+            <td class="card mobile-pad" style="padding: 36px 40px;">
+              <table role="presentation" width="100%">
+                <tr>
+                  <td>
+                    <h2 class="serif section-title"
+                      style="color: #5a5a40; font-size: 38px; font-style: italic; font-weight: 600; line-height: 1.05; margin: 0 0 18px;">
+                      What you can expect </h2>
+                    <p class="body-copy" style="margin-bottom: 16px;"> Gentle updates, new releases from the collection,
+                      and occasional reflections on art, nature, and the quieter moments in between. </p>
+                    <p class="body-copy"> No rush-heavy launches. No noisy inbox habits. Just thoughtful notes when
+                      there is something worth sharing. </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 26px 0;">
+                    <div class="divider"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p
+                      style="color: #c05c3c; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">
+                      A personal note </p>
+                    <p class="body-copy" style="margin-bottom: 18px;"> This brand was shaped to feel personal, grounded,
+                      and honest. If you stay awhile, I hope these pieces bring a little calm to your shelf, your desk,
+                      or your day. </p>
+                    <p class="serif" style="color: #5a5a40; font-size: 34px; font-style: italic; line-height: 1.1;">
+                      With warmth,<br /> Lina </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 26px 20px 8px; text-align: center;">
+              <p style="color: #8b8b6b; font-size: 13px; line-height: 1.7;"> You&apos;re receiving this because you
+                signed up for updates from Lina Olivetree. </p>
+              <p style="color: #8b8b6b; font-size: 13px; line-height: 1.7;"> <a
+                  href="https://www.instagram.com/linaolivetree/" class="footer-link">Instagram</a> &nbsp;·&nbsp; <a
+                  href="https://linaolivetree.com" class="footer-link">Website</a> </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
